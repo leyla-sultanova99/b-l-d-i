@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leyla Sultanova — Pulsuz Arıqlama Bələdçisi</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose: #e8857a;
+  --rose-light: #f5c4bf;
+  --rose-dark: #c4554a;
+  --cream: #fdf8f5;
+  --warm: #f7efe8;
+  --text: #2d2017;
+  --text-light: #8b6f5e;
+  --green: #7ba68a;
+  --gold: #c9a96e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── PAGE WRAPPER ── */
+.page {
+  min-height: 100vh;
+  padding: 60px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── COVER ── */
+.cover {
+  background: linear-gradient(145deg, #2d1a14 0%, #4a2820 40%, #c4554a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 80px 48px;
+  position: relative;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(232,133,122,0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(201,169,110,0.2) 0%, transparent 50%);
+}
+
+.cover-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.cover h1 em {
+  font-style: italic;
+  color: var(--rose-light);
+}
+
+.cover-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 48px;
+  font-weight: 300;
+  position: relative;
+}
+
+.cover-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 48px;
+  position: relative;
+}
+
+.cover-promise {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 28px 36px;
+  max-width: 480px;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.cover-promise p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.cover-author {
+  margin-top: 48px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.cover-author strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* ── SECTION PAGES ── */
+.section-page {
+  background: var(--cream);
+  padding: 72px 56px;
+  position: relative;
+}
+
+.section-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--rose) 0%, var(--gold) 100%);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.section-num {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.section-title em {
+  color: var(--rose-dark);
+  font-style: italic;
+}
+
+/* ── INTRO TEXT ── */
+.intro-text {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-light);
+  margin-bottom: 36px;
+}
+
+/* ── HIGHLIGHT BOX ── */
+.highlight {
+  background: linear-gradient(135deg, rgba(232,133,122,0.1) 0%, rgba(201,169,110,0.08) 100%);
+  border: 1px solid rgba(232,133,122,0.25);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin: 28px 0;
+  position: relative;
+}
+
+.highlight::before {
+  content: '"';
+  position: absolute;
+  top: -8px;
+  left: 24px;
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  color: var(--rose-light);
+  line-height: 1;
+}
+
+.highlight p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+  font-style: italic;
+  padding-top: 8px;
+}
+
+/* ── STAT CARDS ── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 2px 20px rgba(45,32,23,0.06);
+  border: 1px solid rgba(232,133,122,0.12);
+}
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: var(--rose-dark);
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ── TIPS ── */
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tip-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: white;
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 16px rgba(45,32,23,0.05);
+}
+
+.tip-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--rose-light) 0%, var(--rose) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.tip-content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.tip-content p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── MEAL PLAN ── */
+.meal-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.meal-row {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.meal-time {
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+  color: white;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.meal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 14px 18px;
+  flex: 1;
+  box-shadow: 0 1px 12px rgba(45,32,23,0.04);
+}
+
+.meal-content strong {
+  font-size: 14px;
+  color: var(--text);
+  display: block;
+  margin-bottom: 3px;
+}
+
+.meal-content span {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* ── EXERCISE ── */
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.exercise-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 2px 16px rgba(45,32,23,0.05);
+  border-left: 3px solid var(--green);
+}
+
+.exercise-card .ex-num {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.exercise-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.exercise-card p {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.exercise-card .duration {
+  margin-top: 10px;
+  display: inline-block;
+  background: rgba(123,166,138,0.12);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* ── MYTH BUSTERS ── */
+.myth-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.myth-item {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(45,32,23,0.05);
+}
+
+.myth-wrong {
+  background: rgba(196,85,74,0.06);
+  padding: 14px 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.myth-wrong .icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.myth-wrong p {
+  font-size: 13px;
+  color: var(--rose-dark);
+  font-weight: 500;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.myth-right {
+  background: rgba(123,166,138,0.08);
+  padding: 14px 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-top: 1px solid rgba(123,166,138,0.15);
+}
+
+.myth-right .icon { font-size: 18px; flex-shrink: 0; }
+
+.myth-right p {
+  font-size: 13px;
+  color: #4a7a5a;
+  font-weight: 500;
+}
+
+/* ── CTA PAGE ── */
+.cta-page {
+  background: linear-gradient(145deg, #2d1a14 0%, #4a2820 50%, #3d1f1a 100%);
+  padding: 80px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(232,133,122,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 70%, rgba(201,169,110,0.15) 0%, transparent 50%);
+}
+
+.cta-badge {
+  display: inline-block;
+  background: rgba(201,169,110,0.2);
+  border: 1px solid rgba(201,169,110,0.4);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.cta-page h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.cta-page h2 em {
+  color: var(--rose-light);
+  font-style: italic;
+}
+
+.cta-page .sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 48px;
+  line-height: 1.7;
+  position: relative;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 480px;
+  margin: 0 auto 48px;
+  position: relative;
+}
+
+.feature-item {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: left;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.feature-item .fi {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.feature-item p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.4;
+}
+
+.cta-price {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.cta-price .old {
+  font-size: 14px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: line-through;
+  margin-bottom: 6px;
+}
+
+.cta-price .new {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  color: white;
+  line-height: 1;
+}
+
+.cta-price .new sub {
+  font-size: 20px;
+  font-family: 'DM Sans', sans-serif;
+  color: rgba(255,255,255,0.6);
+}
+
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 56px;
+  border-radius: 60px;
+  letter-spacing: 0.3px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(196,85,74,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(196,85,74,0.6);
+}
+
+.cta-note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  position: relative;
+}
+
+/* ── PAGE BREAK ── */
+.page-break {
+  page-break-after: always;
+  border-top: 1px solid rgba(232,133,122,0.15);
+  margin: 0;
+}
+
+/* ── DECORATIVE ── */
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.ornament {
+  text-align: center;
+  color: var(--rose-light);
+  font-size: 20px;
+  letter-spacing: 8px;
+  margin: 32px 0;
+  opacity: 0.6;
+}
+
+@media print {
+  .page { page-break-inside: avoid; }
+  .page-break { page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════ COVER ════ -->
+<div class="cover">
+  <div class="deco-circle" style="width:400px;height:400px;background:white;top:-100px;right:-100px;"></div>
+  <div class="deco-circle" style="width:300px;height:300px;background:var(--gold);bottom:-80px;left:-80px;"></div>
+
+  <div class="cover-tag">Leyla Sultanova təqdim edir</div>
+
+  <h1>Evdə<br><em>Arıqlama</em><br>Bələdçisi</h1>
+
+  <p class="cover-sub">30 günlük proqrama başlamadan əvvəl bilməli olduğun hər şey</p>
+
+  <div class="cover-divider"></div>
+
+  <div class="cover-promise">
+    <p>Bu bələdçi sənə pulsuz verilir — çünkü hər Azərbaycan qadını düzgün məlumatı haqqı ilə almağa layiqdir.</p>
+  </div>
+
+  <div class="cover-author">
+    <strong>Leyla Sultanova</strong> — Qidalanma və Sağlamlıq Mütəxəssisi
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════ PAGE 1 — GİRİŞ ════ -->
+<div class="section-page">
+  <div class="deco-circle" style="width:200px;height:200px;background:var(--rose);top:-50px;right:-50px;"></div>
+
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <h2 class="section-title">Niyə bu qədər <em>çətin</em> görünür?</h2>
+  </div>
+
+  <p class="intro-text">
+    Əgər bu sətirləri oxuyursansa, deməli sən də bir çox şey sınadın. Diet etdin, idmana başladın, "bu dəfə ciddi olacam" dedin. Amma bir müddət sonra hər şey köhnə yerinə qayıtdı.
+  </p>
+
+  <p class="intro-text">
+    Bu sənin gücsüzlüyün deyil. Bu yanlış yanaşmanın nəticəsidir.
+  </p>
+
+  <div class="highlight">
+    <p>Azərbaycan qadınlarının 78%-i arıqlama cəhdlərinin ilk 3 həftəsindən sonra vaz keçir. Səbəb? Onlara öz həyat tərzi ilə uyğun olmayan metodlar öyrədilir.</p>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <span class="stat-num">78%</span>
+      <div class="stat-label">Qadın 3 həftədə vaz keçir</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">4–6</span>
+      <div class="stat-label">Kq orta nəticə / 30 gün</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">15 dq</span>
+      <div class="stat-label">Gündəlik idman kifayətdir</div>
+    </div>
+  </div>
+
+  <p class="intro-text">
+    Leyla Sultanova proqramı isə tamamilə Azərbaycan qadınına uyğun hazırlanmışdır. Plov, dolma, şorba — sevdiklərin yeməklərlə arıqlamaq mümkündür.
+  </p>
+
+  <div class="ornament">✦ ✦ ✦</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════ PAGE 2 — YEMƏK ════ -->
+<div class="section-page">
+  <div class="deco-circle" style="width:250px;height:250px;background:var(--gold);bottom:-80px;left:-60px;"></div>
+
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <h2 class="section-title">Nə yesən <em>arıqlayarsan?</em></h2>
+  </div>
+
+  <p class="intro-text">
+    Ac qalmaq arıqlamağın yolu deyil. Düzgün yemək seçimi — bəli. İşdə 1 günlük nümunə menyu:
+  </p>
+
+  <div class="meal-plan">
+    <div class="meal-row">
+      <div class="meal-time">Səhər<br>07:00</div>
+      <div class="meal-content">
+        <strong>Yumurta + Çörək + Çay</strong>
+        <span>2 yumurta, 1 dilim çörək, şəkərsiz çay — doyurucu başlanğıc</span>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time">Ara<br>10:00</div>
+      <div class="meal-content">
+        <strong>Meyvə + Qatıq</strong>
+        <span>1 alma və ya armud, 100 q az yağlı qatıq</span>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time">Nahar<br>13:00</div>
+      <div class="meal-content">
+        <strong>Şorba + Salat</strong>
+        <span>Ev şorbası (az yağlı), kələm-pomidor salatı, 1 dilim çörək</span>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time">Ara<br>16:00</div>
+      <div class="meal-content">
+        <strong>Qoz + Su</strong>
+        <span>Bir ovuc qoz, 2 stəkan su — enerji üçün</span>
+      </div>
+    </div>
+    <div class="meal-row">
+      <div class="meal-time">Axşam<br>19:00</div>
+      <div class="meal-content">
+        <strong>Toyuq + Tərəvəz</strong>
+        <span>Qaynadılmış/bişirilmiş toyuq, buxarlanmış tərəvəz</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p>Vacib qayda: Axşam saat 20:00-dan sonra yemək yemə. Su içmək isə hər vaxt serbestdir — günə 2 litr hədəfini qoy.</p>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════ PAGE 3 — İDMAN ════ -->
+<div class="section-page">
+  <div class="deco-circle" style="width:180px;height:180px;background:var(--green);top:-40px;right:-40px;opacity:0.08;"></div>
+
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <h2 class="section-title">Evdə 15 dəqiqə — <em>kifayətdir</em></h2>
+  </div>
+
+  <p class="intro-text">
+    İdman zalına getmək, xüsusi avadanlıq almaq lazım deyil. Bu 4 hərəkət gündə 15 dəqiqəndə bütün bədənini işlədər:
+  </p>
+
+  <div class="exercise-grid">
+    <div class="exercise-card">
+      <div class="ex-num">Hərəkət 01</div>
+      <h4>Squat</h4>
+      <p>Ayaqları çiyin genişliyində aç, yavaş otur, düz qalx. Diz ayaq barmaqlarını keçməsin.</p>
+      <span class="duration">3 × 15 təkrar</span>
+    </div>
+    <div class="exercise-card">
+      <div class="ex-num">Hərəkət 02</div>
+      <h4>Glute Bridge</h4>
+      <p>Uzanıb çanağı qaldır, 2 saniyə tut, yavaş en. Bel üçün mükəmməldir.</p>
+      <span class="duration">3 × 20 təkrar</span>
+    </div>
+    <div class="exercise-card">
+      <div class="ex-num">Hərəkət 03</div>
+      <h4>Plank</h4>
+      <p>Dirsəklər üzərində düz mövqe. Bədən başdan topuğa düz xəttdə olmalıdır.</p>
+      <span class="duration">3 × 30 saniyə</span>
+    </div>
+    <div class="exercise-card">
+      <div class="ex-num">Hərəkət 04</div>
+      <h4>Yüksək Diz</h4>
+      <p>Yerində qaç, dizlərini bel hündürlüyünə qaldır. Sürəti sən seç.</p>
+      <span class="duration">3 × 45 saniyə</span>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p>Bu 4 hərəkəti ardıcıl et, aralarında 30 saniyə istirah. Səhər yeməyindən əvvəl edərsən — yağ yandırma effekti daha güclü olur.</p>
+  </div>
+
+  <ul class="tips-list" style="margin-top:24px;">
+    <li class="tip-item">
+      <div class="tip-icon">💧</div>
+      <div class="tip-content">
+        <h4>İdmandan əvvəl su iç</h4>
+        <p>1 stəkan su içmək performansını artırır, susuzluğun qarşısını alır.</p>
+      </div>
+    </li>
+    <li class="tip-item">
+      <div class="tip-icon">🌅</div>
+      <div class="tip-content">
+        <h4>Səhər idmanı daha effektlidir</h4>
+        <p>Aclıq vəziyyətdə idman edəndə bədən birbaşa yağ yandırmağa başlayır.</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════ PAGE 4 — MİFLƏR ════ -->
+<div class="section-page">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <h2 class="section-title">Yanlış bildiklərimiz — <em>həqiqətlər</em></h2>
+  </div>
+
+  <p class="intro-text">
+    İnternetdə arıqlama haqqında çox yanlış məlumat var. İşdə ən çox yayılan 4 mif və gerçək həqiqəti:
+  </p>
+
+  <div class="myth-list">
+    <div class="myth-item">
+      <div class="myth-wrong">
+        <span class="icon">❌</span>
+        <p>"Karbohidratdan uzaq durmalıyam"</p>
+      </div>
+      <div class="myth-right">
+        <span class="icon">✅</span>
+        <p>Düzgün miqdar karbohidrat enerji verir. Problem miqdar deyil, növdür — ağ çörək yerinə tam taxıl seç.</p>
+      </div>
+    </div>
+
+    <div class="myth-item">
+      <div class="myth-wrong">
+        <span class="icon">❌</span>
+        <p>"Arıqlamaq üçün ac qalmalıyam"</p>
+      </div>
+      <div class="myth-right">
+        <span class="icon">✅</span>
+        <p>Ac qalmaq metabolizmi yavaşladır. Kiçik porsiyalarla tez-tez yemək daha effektivdir.</p>
+      </div>
+    </div>
+
+    <div class="myth-item">
+      <div class="myth-wrong">
+        <span class="icon">❌</span>
+        <p>"Saatlarca idman etmək lazımdır"</p>
+      </div>
+      <div class="myth-right">
+        <span class="icon">✅</span>
+        <p>Gündə 15-20 dəqiqə düzgün hərəkət 1 saatlik pis idmandan daha effektivdir.</p>
+      </div>
+    </div>
+
+    <div class="myth-item">
+      <div class="myth-wrong">
+        <span class="icon">❌</span>
+        <p>"Arıqlayandan sonra yenidən yeyə bilərəm"</p>
+      </div>
+      <div class="myth-right">
+        <span class="icon">✅</span>
+        <p>Arıqlamaq həyat tərzi dəyişikliyidir. 30 günlük proqram yeni vərdişlər formalaşdırır — sonrası avtomatik olur.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ornament">✦ ✦ ✦</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ════ CTA PAGE ════ -->
+<div class="cta-page">
+  <div class="deco-circle" style="width:500px;height:500px;background:white;top:-200px;right:-200px;"></div>
+  <div class="deco-circle" style="width:350px;height:350px;background:var(--gold);bottom:-150px;left:-150px;"></div>
+
+  <div class="cta-badge">30 günlük proqram</div>
+
+  <h2>İndi <em>başlamağın</em><br>vaxtıdır</h2>
+
+  <p class="sub">
+    Bu bələdçini oxuduğun üçün artıq digər qadınlardan irəlidəsən.<br>
+    Növbəti addım — tam proqramı almaq.
+  </p>
+
+  <div class="features-grid">
+    <div class="feature-item">
+      <span class="fi">📅</span>
+      <p>30 günlük gündəlik plan</p>
+    </div>
+    <div class="feature-item">
+      <span class="fi">🍽️</span>
+      <p>Azərbaycan menyusu</p>
+    </div>
+    <div class="feature-item">
+      <span class="fi">🏠</span>
+      <p>Evdə, avadanlıqsız</p>
+    </div>
+    <div class="feature-item">
+      <span class="fi">🛒</span>
+      <p>Alışveriş siyahısı</p>
+    </div>
+  </div>
+
+  <div class="cta-price">
+    <div class="old">40 AZN əvəzinə</div>
+    <div class="new">9.99<sub> AZN</sub></div>
+  </div>
+
+  <a href="https://leyla-sultanova99.github.io/az.ariqlama/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcARDhN1leHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAaeh4ye-9wSdXGIiu1WiBuugePlqgVP1brtuducH07DXY7Ev5_jELGt0jvhDMw_aem_3OxUDuUfDJEopYLXEkeqwA" class="cta-btn">
+    Proqramı Al →
+  </a>
+
+  <p class="cta-note">1 dəfə al — ömürlük sənin · Dərhal çatdırılır</p>
+</div>
+
+</body>
+</html>
